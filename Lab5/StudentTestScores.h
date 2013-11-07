@@ -43,7 +43,11 @@ istream& operator>>(istream& istr, StudentTestScores &obj);
 // *** Stream I/O operations here
 	friend ostream& operator<<(ostream& ostr, const StudentTestScores &obj);
 	friend istream& operator>>(istream& istr, StudentTestScores &obj);
-};
+
+//Additional 
+ double Averager();
+ 
+ };
 
 #endif 
 
