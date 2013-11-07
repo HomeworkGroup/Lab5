@@ -33,7 +33,7 @@ int main()
 	string student_name;
 	string buf;
 	int test_number;
-	int test_score;
+	double test_score;
 
     while (student_number--)
 	{
@@ -45,7 +45,7 @@ int main()
 		while (test_number--)
 		{
 			for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
-			test_score = atoi(buf.c_str());
+			test_score = atof(buf.c_str());
 		}
 
 		student.displayTestScores();
