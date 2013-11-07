@@ -135,15 +135,3 @@ istream& operator>>(istream& istr, StudentTestScores& obj)
 
 	return istr;
 }
-
-//Additional 
-double StudentTestScores::Averager(StudentTestScores obj)
-{
-obj.testScores = new double[obj.numTestScores];
-	for(int i=0; i<obj.numTestScores; i++)
-	{
-		cout<<"Enter test score "<<(i+1)<<": ";
-		istr>>obj.testScores[i];
-	}
-
-}
