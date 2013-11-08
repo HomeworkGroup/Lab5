@@ -4,37 +4,50 @@
 using namespace std;
 
 
-StudentTestScores::StudentTestScores(string name, int numScores)
+StudentTestScores::StudentTestScores()
 {
-	/* while(name=="")
-	{
-		cout<<"Student name has not been specified. Please enter student name: ";
-		getline(cin, name);
-	} */
-
-	/* while( numScores == 0)
-	{
-		cout<<"Number of test scores has not been specified. Please enter number of scores: ";
-		cin>>numScores;
-	} */
-	
-	studentName = name;
-	numTestScores = numScores;
-
-	if(numScores <= 0)
-		testScores = NULL;
-	else
-	{
-		testScores = new double[numTestScores];
-
-		cout<<"Student: "<<studentName<<endl;
-		for(int i=0; i<numTestScores; i++)
-		{
-			cout<<"Enter test score "<<(i+1)<<": ";
-			cin>>testScores[i];
-		}
-	}
+	studentName = "";
+	numTestScores = 0;
+	testScores = NULL;
 }
+
+StudentTestScores::StudentTestScores(string name, int numscores, int* scores)
+{
+
+}
+
+//CONSTRUCTOR CAN'T BE USED
+//StudentTestScores::StudentTestScores(string name, int numScores)
+//{
+//	/* while(name=="")
+//	{
+//		cout<<"Student name has not been specified. Please enter student name: ";
+//		getline(cin, name);
+//	} */
+//
+//	/* while( numScores == 0)
+//	{
+//		cout<<"Number of test scores has not been specified. Please enter number of scores: ";
+//		cin>>numScores;
+//	} */
+//	
+//	studentName = name;
+//	numTestScores = numScores;
+//
+//	if(numScores <= 0)
+//		testScores = NULL;
+//	else
+//	{
+//		testScores = new double[numTestScores];
+//
+//		cout<<"Student: "<<studentName<<endl;
+//		for(int i=0; i<numTestScores; i++)
+//		{
+//			cout<<"Enter test score "<<(i+1)<<": ";
+//			cin>>testScores[i];
+//		}
+//	}
+//}
 
 StudentTestScores::~StudentTestScores()
 {

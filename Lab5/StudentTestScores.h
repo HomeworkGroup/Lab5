@@ -14,10 +14,16 @@ istream& operator>>(istream& istr, StudentTestScores &obj);
  {
     private:
 	string studentName;
-	double *testScores;
 	int numTestScores;
+	double *testScores;
+	
    public:
-	StudentTestScores(string name="", int numScores=0);	// class constructor	
+
+	/*Old default constructor
+	StudentTestScores(string name="", int numScores=0);*/
+
+	StudentTestScores(); //New default constructor
+	StudentTestScores(string , int , int* );
 	StudentTestScores(const StudentTestScores &other);      // class copy constructor
 	~StudentTestScores();  				// class destructor
 

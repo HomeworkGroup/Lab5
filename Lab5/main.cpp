@@ -14,7 +14,7 @@ int main()
         cout << "Please enter the file name: ";
         cin >> file_name;
         file.open(file_name);
-    } while (!file.is_open() && cout << "Invalid file name!\n");
+    } while (!file.is_open() && cout << "Invalid file name!\n"); //How does this work?
     
     //Get the number of students
     string line_buf;
@@ -46,7 +46,10 @@ int main()
 		{
 			for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
 			test_score = atof(buf.c_str());
+			//This changes test_score every time the loop executes, right? I think we should set up an array test_scores[].
 		}
+
+		//Will we pass the variables student_name, test_number, etc., to the student object's parametrized constructor?
 
 		student.displayTestScores();
 	}
