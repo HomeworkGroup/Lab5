@@ -13,6 +13,15 @@ StudentTestScores::StudentTestScores()
 
 StudentTestScores::StudentTestScores(string name, int numscores, int* scores)
 {
+	//This code will go in function to take arguments from main, then constructor will call fcn
+	studentName = name;
+	numTestScores = numscores;
+
+	if(numscores>=0)
+	{
+		testScores = new double[numTestScores];
+		for(int i=0; i<numTestScores; i++)
+			
 
 }
 

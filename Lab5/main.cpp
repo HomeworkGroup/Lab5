@@ -33,7 +33,8 @@ int main()
 	string student_name;
 	string buf;
 	int test_number;
-	double test_score;
+	//Array of test scores
+	double* test_scores=NULL;
 
     while (student_number--)
 	{
@@ -42,14 +43,19 @@ int main()
 		for (; line_buf[i] != '\t'; i++) student_name += line_buf[i];
 		for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
 		test_number = atoi(buf.c_str());
-		while (test_number--)
+
+		if(test_number<=0)
+		{
+			//validating input
+		}
+		//Create array test_scores with test_number of elements
+		test_scores = new double[test_number];
+		//Replace while with for to assign each test score to element of test_scores
+		for(int j=0; j<test_number; j++)
 		{
 			for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
-			test_score = atof(buf.c_str());
-			//This changes test_score every time the loop executes, right? I think we should set up an array test_scores[].
+			test_scores[j] = atof(buf.c_str());
 		}
-
-		//Will we pass the variables student_name, test_number, etc., to the student object's parametrized constructor?
 
 		student.displayTestScores();
 	}
