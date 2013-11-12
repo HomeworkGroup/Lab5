@@ -37,7 +37,7 @@ int main()
 
     while (student_number--)
     {
-        file >> line_buf;    //Need to rewrite this: won't working
+        file >> line_buf;    //Need to rewrite this: won't work
         int i = 0;
     
         for (; line_buf[i] != '\t'; i++) student_name += line_buf[i];
