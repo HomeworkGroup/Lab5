@@ -14,7 +14,7 @@ int main()
         cout << "Please enter the file name: ";
         cin >> file_name;
         file.open(file_name);
-    } while (!file.is_open() && cout << "Invalid file name!\n"); //How does this work?
+    } while (!file.is_open() && cout << "Invalid file name!\n");
     
     //Get the number of students
     string line_buf;
@@ -58,7 +58,7 @@ int main()
             test_score = atof(buf.c_str());
         
             student->setOneTestScore(n, test_score);
-            //This changes test_score every time the loop executes, right? I think we should set up an array test_scores[].
+
             n++;
         }
 

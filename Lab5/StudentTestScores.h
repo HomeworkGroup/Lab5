@@ -16,7 +16,6 @@ istream& operator>>(istream& istr, StudentTestScores &obj);
 	string studentName;
 	int numTestScores;
 	double *testScores;
-	string letterGrade;
 	
    public:
 
@@ -24,7 +23,7 @@ istream& operator>>(istream& istr, StudentTestScores &obj);
 	StudentTestScores(string name="", int numScores=0);*/
 
 	StudentTestScores(); //New default constructor
-	StudentTestScores(string , int , int* );
+	StudentTestScores(string , int );
 	StudentTestScores(const StudentTestScores &other);      // class copy constructor
 	~StudentTestScores();  				// class destructor
 
@@ -41,7 +40,7 @@ istream& operator>>(istream& istr, StudentTestScores &obj);
 	void setOneTestScore(int index, int score);
 
 	double getAverage();
-	void getLetterGrade();
+	string getLetterGrade();
 	string getName();
 	double getOneTestScore(int index);
 

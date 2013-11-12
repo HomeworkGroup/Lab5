@@ -11,8 +11,15 @@ StudentTestScores::StudentTestScores()
 	testScores = NULL;
 }
 
-StudentTestScores::StudentTestScores(string name, int numscores, int* scores)
+StudentTestScores::StudentTestScores(string name, int numscores)
 {
+	studentName = name;
+	numTestScores = numscores;
+
+	if(!numscores)
+		testScores = NULL;
+	else
+		testScores = new double[numTestScores];
 
 }
 
@@ -108,20 +115,23 @@ double StudentTestScores::getAverage()
 	return (sum/numTestScores);
 }
 
-void StudentTestScores::getLetterGrade()
+string StudentTestScores::getLetterGrade()
 {
+	if (!testScores)
+		return "U";
+
 	double avg=getAverage();
 
 	if(avg>=90.0)
-		letterGrade = "A";
+		return "A";
 	else if(avg>=80.0 && avg<90.0)
-		letterGrade = "B";
+		return "B";
 	else if(avg>=70.0 && avg<80.0)
-		letterGrade = "C";
+		return "C";
 	else if(avg>=60.0 && avg<70.0)
-		letterGrade = "D";
+		return "D";
 	else if(avg<60.0)
-		letterGrade = "F";
+		return "F";
 }
 
 string StudentTestScores::getName()
