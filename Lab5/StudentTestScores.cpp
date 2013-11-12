@@ -76,6 +76,8 @@ void StudentTestScores::displayTestScores()
 	cout<<numTestScores;
 	for(int i=0; i<numTestScores; i++)
 		cout<<'\t'<<testScores[i];
+	cout<<'t'<<getAverage()<<'t';
+	cout<<getLetterGrade();
 	cout<<endl;
 }
 
@@ -158,14 +160,13 @@ StudentTestScores StudentTestScores::operator=(const StudentTestScores &other)
 
 ostream& operator<<(ostream& ostr, const StudentTestScores& obj)
 {
-	ostr<<"Student: "<<obj.studentName<<endl;
-	ostr<<"Number of scores: "<<obj.numTestScores<<endl;
-	
-	ostr<<"Here are the scores: "<<endl;
-	for(int i=0; i<obj.numTestScores; i++)
-	{
-		ostr<<(i+1)<<": "<<obj.testScores[i]<<endl;
-	}
+	ostr<<studentName<<'\t';
+	ostr<<numTestScores;
+	for(int i=0; i<numTestScores; i++)
+		ostr<<'\t'<<testScores[i];
+	ostr<<'t'<<getAverage()<<'t';
+	ostr<<getLetterGrade();
+	ostr<<endl;
 
 	return ostr;
 }
