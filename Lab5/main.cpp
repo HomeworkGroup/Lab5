@@ -20,7 +20,7 @@ int main()
     string line_buf;
     int student_number;
 
-    file >> line_buf;
+    getline(file,line_buf);
     student_number = atoi(line_buf.c_str());
     if (student_number <= 0)
     {
@@ -37,7 +37,7 @@ int main()
 
     while (student_number--)
     {
-        file >> line_buf;    //Need to rewrite this: won't work
+        getline(file,line_buf);
         int i = 0;
     
         for (; line_buf[i] != '\t'; i++) student_name += line_buf[i];
