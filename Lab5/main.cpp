@@ -37,16 +37,30 @@ int main()
 
     while (student_number--)
     {
-        file >> line_buf;
+        file >> line_buf;    //Need to rewrite this: won't working
         int i = 0;
+    
         for (; line_buf[i] != '\t'; i++) student_name += line_buf[i];
+        student.setName(student_name);
+    
         for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
         test_number = atoi(buf.c_str());
+        if (test_number < 0)
+        {
+            cout << "Invalid test number!\n";
+            continue;
+        }
+        student.setTestNumber(test_number);
+    
         while (test_number--)
         {
+            int n = 0;
             for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
             test_score = atof(buf.c_str());
+        
+            student.setOneTestScore(n, test_score);
             //This changes test_score every time the loop executes, right? I think we should set up an array test_scores[].
+            n++;
         }
 
         //Will we pass the variables student_name, test_number, etc., to the student object's parametrized constructor?
