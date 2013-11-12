@@ -63,8 +63,6 @@ int main()
             n++;
         }
 
-        //Will we pass the variables student_name, test_number, etc., to the student object's parametrized constructor?
-
         student.displayTestScores();
     }
 

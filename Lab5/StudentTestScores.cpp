@@ -13,15 +13,6 @@ StudentTestScores::StudentTestScores()
 
 StudentTestScores::StudentTestScores(string name, int numscores, int* scores)
 {
-	//This code will go in function to take arguments from main, then constructor will call fcn
-	studentName = name;
-	numTestScores = numscores;
-
-	if(numscores>=0)
-	{
-		testScores = new double[numTestScores];
-		for(int i=0; i<numTestScores; i++)
-			
 
 }
 
@@ -103,6 +94,34 @@ void StudentTestScores::setName(string name)
 void StudentTestScores::setOneTestScore(int index, int score)
 {
 	testScores[index] = score;
+}
+
+double StudentTestScores::getAverage()
+{
+	double sum=0;
+
+	for(int i=0; i<numTestScores; i++)
+	{
+		sum+=testScores[i];
+	}
+
+	return (sum/numTestScores);
+}
+
+void StudentTestScores::getLetterGrade()
+{
+	double avg=getAverage();
+
+	if(avg>=90.0)
+		letterGrade = "A";
+	else if(avg>=80.0 && avg<90.0)
+		letterGrade = "B";
+	else if(avg>=70.0 && avg<80.0)
+		letterGrade = "C";
+	else if(avg>=60.0 && avg<70.0)
+		letterGrade = "D";
+	else if(avg<60.0)
+		letterGrade = "F";
 }
 
 string StudentTestScores::getName()

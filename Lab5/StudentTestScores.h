@@ -16,6 +16,7 @@ istream& operator>>(istream& istr, StudentTestScores &obj);
 	string studentName;
 	int numTestScores;
 	double *testScores;
+	string letterGrade;
 	
    public:
 
@@ -34,11 +35,13 @@ istream& operator>>(istream& istr, StudentTestScores &obj);
 	void displayTestScores();							
 	
 //  *** ADD accessors & mutators HERE
-
+	
 	void setName(string name);
 	//void setTestScores(int numScores);
 	void setOneTestScore(int index, int score);
 
+	double getAverage();
+	void getLetterGrade();
 	string getName();
 	double getOneTestScore(int index);
 
