@@ -29,30 +29,30 @@ int main()
     }
 
     //A loop to process the data
-	StudentTestScores student;
-	string student_name;
-	string buf;
-	int test_number;
-	double test_score;
+    StudentTestScores student;
+    string student_name;
+    string buf;
+    int test_number;
+    double test_score;
 
     while (student_number--)
-	{
-		file >> line_buf;
-		int i = 0;
-		for (; line_buf[i] != '\t'; i++) student_name += line_buf[i];
-		for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
-		test_number = atoi(buf.c_str());
-		while (test_number--)
-		{
-			for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
-			test_score = atof(buf.c_str());
-			//This changes test_score every time the loop executes, right? I think we should set up an array test_scores[].
-		}
+    {
+        file >> line_buf;
+        int i = 0;
+        for (; line_buf[i] != '\t'; i++) student_name += line_buf[i];
+        for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
+        test_number = atoi(buf.c_str());
+        while (test_number--)
+        {
+            for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
+            test_score = atof(buf.c_str());
+            //This changes test_score every time the loop executes, right? I think we should set up an array test_scores[].
+        }
 
-		//Will we pass the variables student_name, test_number, etc., to the student object's parametrized constructor?
+        //Will we pass the variables student_name, test_number, etc., to the student object's parametrized constructor?
 
-		student.displayTestScores();
-	}
+        student.displayTestScores();
+    }
 
     return 0;
 }
