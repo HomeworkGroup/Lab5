@@ -29,7 +29,6 @@ int main()
     }
 
     //A loop to process the data
-    StudentTestScores student;
     string student_name;
     string buf;
     int test_number;
@@ -41,7 +40,6 @@ int main()
         int i = 0;
     
         for (; line_buf[i] != '\t'; i++) student_name += line_buf[i];
-        student.setName(student_name);
     
         for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
         test_number = atoi(buf.c_str());
@@ -50,7 +48,8 @@ int main()
             cout << "Invalid test number!\n";
             continue;
         }
-        student.setTestNumber(test_number);
+    
+        StudentTestScores * student = new StudentTestScores(student_name, test_number);
     
         while (test_number--)
         {
@@ -58,12 +57,14 @@ int main()
             for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
             test_score = atof(buf.c_str());
         
-            student.setOneTestScore(n, test_score);
+            student->setOneTestScore(n, test_score);
             //This changes test_score every time the loop executes, right? I think we should set up an array test_scores[].
             n++;
         }
 
-        student.displayTestScores();
+        student->displayTestScores();
+    
+        delete student;
     }
 
     return 0;
