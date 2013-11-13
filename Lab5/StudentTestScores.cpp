@@ -160,12 +160,14 @@ StudentTestScores StudentTestScores::operator=(const StudentTestScores &other)
 
 ostream& operator<<(ostream& ostr, const StudentTestScores& obj)
 {
-	ostr<<studentName<<'\t';
-	ostr<<numTestScores;
-	for(int i=0; i<numTestScores; i++)
-		ostr<<'\t'<<testScores[i];
-	ostr<<'t'<<getAverage()<<'t';
-	ostr<<getLetterGrade();
+	StudentTestScores dummy = obj;
+
+	ostr<<dummy.studentName<<'\t';
+	ostr<<dummy.numTestScores;
+	for(int i=0; i<dummy.numTestScores; i++)
+		ostr<<'\t'<<dummy.testScores[i];
+	ostr<<'t'<<dummy.getAverage()<<'t';
+	ostr<<dummy.getLetterGrade();
 	ostr<<endl;
 
 	return ostr;
