@@ -37,7 +37,7 @@ istream& operator>>(istream& istr, StudentTestScores &obj);
 	
 	void setName(string name);
 	//void setTestScores(int numScores);
-	void setOneTestScore(int index, int score);
+	void setOneTestScore(int index, double score);
 
 	double getAverage();
 	string getLetterGrade();

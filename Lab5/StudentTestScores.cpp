@@ -100,7 +100,7 @@ void StudentTestScores::setName(string name)
 //	}
 //}
 
-void StudentTestScores::setOneTestScore(int index, int score)
+void StudentTestScores::setOneTestScore(int index, double score)
 {
 	testScores[index] = score;
 }
