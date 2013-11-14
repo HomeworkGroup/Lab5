@@ -15,9 +15,15 @@ int main()
         file.open(file_name);
     } while (!file.is_open() && cout << "Invalid file name!\n");
 
-    //We don't care about the students number
+    //Get the student number
     string line_buf;
     getline(file, line_buf);
+    int student_num = atoi(line_buf.c_str());
+    if (student_num < 0)
+    {
+        cout << "Invalid student number!\n";
+        return 1;
+    }
 
     //A loop to process the data
     string student_name;
@@ -26,7 +32,7 @@ int main()
     int test_number;
     double test_score;
     StudentTestScores * student;
-    while (!file.eof())
+    while (student_num-- && !file.eof())
     {
         i = 0;
         getline(file, line_buf);
