@@ -29,14 +29,13 @@ public:
     void displayTestScores();
 
     //  *** ADD accessors & mutators HERE
-
     void setName(string name);
     void setOneTestScore(int index, double score);
+    string getName();
+    double getOneTestScore(int index);
 
     double getAverage();
     string getLetterGrade();
-    string getName();
-    double getOneTestScore(int index);
 
     // overload assignment operator HERE
     StudentTestScores operator=(const StudentTestScores& other);

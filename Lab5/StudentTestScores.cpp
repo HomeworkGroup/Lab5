@@ -40,9 +40,12 @@ void StudentTestScores::setName(string name)
     studentName = name;
 }
 
-void StudentTestScores::setOneTestScore(int index, double score)
+void StudentTestScores::setOneTestScore(int i, double score)
 {
-    testScores[index] = score;
+    if ((testScores) && (i >= 0) && (i < numTestScores))
+    {
+        testScores[i] = score;
+    }
 }
 
 double StudentTestScores::getAverage()
@@ -81,9 +84,16 @@ string StudentTestScores::getName()
     return studentName;
 }
 
-double StudentTestScores::getOneTestScore(int index)
+double StudentTestScores::getOneTestScore(int i)
 {
-    return testScores[index];
+    if ((testScores) && (i >= 0) && (i < numTestScores))
+    {
+        return testScores[i];
+    }
+    else
+    {
+        return -1;
+    }
 }
 
 StudentTestScores StudentTestScores::operator=(const StudentTestScores &other)
