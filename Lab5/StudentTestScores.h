@@ -35,7 +35,7 @@ public:
     double getOneTestScore(int index);
 
     double getAverage() const;
-    string getLetterGrade();
+    string getLetterGrade() const;
 
     // overload assignment operator HERE
     StudentTestScores operator=(const StudentTestScores& other);

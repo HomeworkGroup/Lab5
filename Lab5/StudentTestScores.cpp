@@ -65,23 +65,39 @@ double StudentTestScores::getAverage() const
     }
 }
 
-string StudentTestScores::getLetterGrade()
+string StudentTestScores::getLetterGrade() const
 {
-    if (!testScores)
+    if (!numTestScores)
+    {
         return "U";
-
-    double avg = getAverage();
-
-    if (avg >= 90.0)
-        return "A";
-    else if (avg >= 80.0 && avg<90.0)
-        return "B";
-    else if (avg >= 70.0 && avg<80.0)
-        return "C";
-    else if (avg >= 60.0 && avg<70.0)
-        return "D";
-    else if (avg<60.0)
-        return "F";
+    }
+    else
+    {
+        if ((getAverage() >= 90) && (getAverage() <= 100))
+        {
+            return "A";
+        }
+        else if ((getAverage() >= 80) && (getAverage() < 90))
+        {
+            return "B";
+        }
+        else if ((getAverage() >= 70) && (getAverage() < 80))
+        {
+            return "C";
+        }
+        else if ((getAverage() >= 60) && (getAverage() < 70))
+        {
+            return "D";
+        }
+        else if ((getAverage() >= 0) && (getAverage() < 60))
+        {
+            return "F";
+        }
+        else
+        {
+            return "X";
+        }
+    }
 }
 
 string StudentTestScores::getName()
