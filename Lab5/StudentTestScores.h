@@ -6,10 +6,6 @@
 
 using namespace std;
 
-class StudentTestScores;
-ostream& operator<<(ostream& ostr, const StudentTestScores &obj);
-istream& operator>>(istream& istr, StudentTestScores &obj);
-
 class StudentTestScores
 {
 private:
@@ -41,8 +37,8 @@ public:
     const StudentTestScores & operator = (const StudentTestScores &other);
 
     // *** Stream I/O operations here
-    friend ostream& operator<<(ostream& ostr, const StudentTestScores &obj);
-    friend istream& operator>>(istream& istr, StudentTestScores &obj);
+	friend ostream & operator << (ostream & out, const StudentTestScores &other);
+    friend istream & operator >> (istream & in, StudentTestScores &other);
 };
 
 #endif 

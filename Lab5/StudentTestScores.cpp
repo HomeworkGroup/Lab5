@@ -140,34 +140,33 @@ const StudentTestScores & StudentTestScores::operator = (const StudentTestScores
     return other;
 }
 
-ostream& operator<<(ostream& ostr, const StudentTestScores& obj)
+// *** Stream I/O operations here
+istream & operator >> (istream & in, StudentTestScores &other)
 {
-    StudentTestScores dummy = obj;
-
-    ostr << dummy.studentName << '\t';
-    ostr << dummy.numTestScores;
-    for (int i = 0; i<dummy.numTestScores; i++)
-        ostr << '\t' << dummy.testScores[i];
-    ostr << '\t' << dummy.getAverage() << '\t';
-    ostr << dummy.getLetterGrade();
-    ostr << endl;
-
-    return ostr;
-}
-
-istream& operator>>(istream& istr, StudentTestScores& obj)
-{
-    cout << "Enter student name: ";
-    getline(istr, obj.studentName);
-    cout << "Enter number of scores: ";
-    istr >> obj.numTestScores;
-
-    obj.testScores = new double[obj.numTestScores];
-    for (int i = 0; i<obj.numTestScores; i++)
+    if (other.testScores)
     {
-        cout << "Enter test score " << (i + 1) << ": ";
-        istr >> obj.testScores[i];
+        delete [] other.testScores;
     }
 
-    return istr;
+    in >> other.studentName >> other.numTestScores;
+    other.testScores = new double[other.numTestScores];
+    for (int i = 0; i < other.numTestScores; i++)
+    {
+        in >> other.testScores[i];
+    }
+
+    return in;
+}
+
+ostream & operator << (ostream & out, const StudentTestScores &other)
+{
+    out << other.studentName << "\t" << other.numTestScores << "\t";
+    for (int i = 0; i < other.numTestScores; i++)
+    {
+        out << other.testScores[i] << "\t";
+    }
+    out << other.getAverage() << "\t" << other.getLetterGrade();
+    out << endl;
+
+    return out;
 }
