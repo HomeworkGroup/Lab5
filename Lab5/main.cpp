@@ -20,7 +20,7 @@ int main()
     string line_buf;
     int student_number;
 
-    getline(file,line_buf);
+    getline(file, line_buf);
     student_number = atoi(line_buf.c_str());
     if (student_number <= 0)
     {
@@ -36,12 +36,16 @@ int main()
 
     while (student_number--)
     {
-        getline(file,line_buf);
+        getline(file, line_buf);
         int i = 0;
     
-        for (; line_buf[i] != '\t'; i++) student_name += line_buf[i];
-    
-        for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
+        student_name.clear();
+        while (line_buf[i] != '\t' && i < (int) line_buf.length()) student_name += line_buf[i++];
+        i++;
+
+        buf.clear();
+        while (line_buf[i] != '\t' && i < (int) line_buf.length()) buf += line_buf[i++];
+        i++;
         test_number = atoi(buf.c_str());
         if (test_number < 0)
         {
@@ -51,10 +55,12 @@ int main()
     
         StudentTestScores * student = new StudentTestScores(student_name, test_number);
     
+		int n = 0;
         while (test_number--)
         {
-            int n = 0;
-            for (; line_buf[i] != '\t'; i++) buf += line_buf[i];
+            buf.clear();
+            while (line_buf[i] != '\t' && i < (int) line_buf.length()) buf += line_buf[i++];
+            i++;
             test_score = atof(buf.c_str());
         
             student->setOneTestScore(n, test_score);
