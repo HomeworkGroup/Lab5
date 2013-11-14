@@ -20,7 +20,8 @@ public:
     // class constructor
     StudentTestScores(); 
     StudentTestScores(string, int);
-    StudentTestScores(const StudentTestScores &other);      // class copy constructor
+    // class copy constructor
+    StudentTestScores(const StudentTestScores &other);
     // class destructor
     ~StudentTestScores();
 

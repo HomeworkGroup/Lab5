@@ -23,13 +23,10 @@ StudentTestScores::~StudentTestScores()
     }
 }
 
+// class copy constructor
 StudentTestScores::StudentTestScores(const StudentTestScores &other)
 {
-    studentName = other.studentName;
-    numTestScores = other.numTestScores;
-    testScores = new double[numTestScores];
-    for (int i = 0; i<numTestScores; i++)
-        testScores[i] = other.testScores[i];
+    *this = other;
 }
 
 void StudentTestScores::displayTestScores()
