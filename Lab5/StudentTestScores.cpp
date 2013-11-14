@@ -29,15 +29,10 @@ StudentTestScores::StudentTestScores(const StudentTestScores &other)
     *this = other;
 }
 
+// *** ADD a display member function that displays
 void StudentTestScores::displayTestScores()
 {
-    cout << studentName << '\t';
-    cout << numTestScores;
-    for (int i = 0; i<numTestScores; i++)
-        cout << '\t' << testScores[i];
-    cout << '\t' << getAverage() << '\t';
-    cout << getLetterGrade();
-    cout << endl;
+    cout << *this;
 }
 
 void StudentTestScores::setName(string name)
