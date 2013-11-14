@@ -18,25 +18,17 @@ istream& operator>>(istream& istr, StudentTestScores &obj);
 	double *testScores;
 	
    public:
-
-	/*Old default constructor
-	StudentTestScores(string name="", int numScores=0);*/
-
 	StudentTestScores(); //New default constructor
 	StudentTestScores(string , int );
 	StudentTestScores(const StudentTestScores &other);      // class copy constructor
 	~StudentTestScores();  				// class destructor
 
-//  *** ADD a display member function that displays a student's test scores in the 
-// following format:
-//  student Name <tab> number of test scores <tab> test scores separated by tabs <endl>
 
 	void displayTestScores();							
 	
 //  *** ADD accessors & mutators HERE
 	
 	void setName(string name);
-	//void setTestScores(int numScores);
 	void setOneTestScore(int index, double score);
 
 	double getAverage();
@@ -45,7 +37,6 @@ istream& operator>>(istream& istr, StudentTestScores &obj);
 	double getOneTestScore(int index);
 
 // overload assignment operator HERE
-
 	StudentTestScores operator=(const StudentTestScores& other);
 
 // *** Stream I/O operations here
