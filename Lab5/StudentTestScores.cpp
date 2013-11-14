@@ -117,14 +117,25 @@ double StudentTestScores::getOneTestScore(int i)
     }
 }
 
-StudentTestScores StudentTestScores::operator=(const StudentTestScores &other)
+const StudentTestScores & StudentTestScores::operator = (const StudentTestScores &other)
 {
-    delete[] testScores;
+    if (this == &other)
+    {
+        return other;
+    }
+
     studentName = other.studentName;
     numTestScores = other.numTestScores;
-    testScores = new double[numTestScores];
-    for (int i = 0; i<numTestScores; i++)
-        testScores[i] = other.testScores[i];
+    if (testScores)
+    {
+        delete [] testScores;
+    }
+    testScores = 0;
+    if (other.testScores)
+    {
+        testScores = new double[other.numTestScores];
+        memcpy(testScores, other.testScores, sizeof(double) * other.numTestScores);
+    }
 
     return other;
 }

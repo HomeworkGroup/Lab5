@@ -38,7 +38,7 @@ public:
     string getLetterGrade() const;
 
     // overload assignment operator HERE
-    StudentTestScores operator=(const StudentTestScores& other);
+    const StudentTestScores & operator = (const StudentTestScores &other);
 
     // *** Stream I/O operations here
     friend ostream& operator<<(ostream& ostr, const StudentTestScores &obj);
