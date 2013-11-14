@@ -48,16 +48,21 @@ void StudentTestScores::setOneTestScore(int i, double score)
     }
 }
 
-double StudentTestScores::getAverage()
+double StudentTestScores::getAverage() const
 {
-    double sum = 0;
-
-    for (int i = 0; i<numTestScores; i++)
+    if (numTestScores)
     {
-        sum += testScores[i];
+        double sum = 0;
+        for (int i = 0; i < numTestScores; i++)
+        {
+            sum += testScores[i];
+        }
+        return sum / numTestScores;
     }
-
-    return (sum / numTestScores);
+    else
+    {
+        return -1;
+    }
 }
 
 string StudentTestScores::getLetterGrade()

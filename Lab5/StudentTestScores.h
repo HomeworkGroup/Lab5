@@ -34,7 +34,7 @@ public:
     string getName();
     double getOneTestScore(int index);
 
-    double getAverage();
+    double getAverage() const;
     string getLetterGrade();
 
     // overload assignment operator HERE
