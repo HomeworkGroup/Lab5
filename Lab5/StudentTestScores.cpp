@@ -1,5 +1,6 @@
 #include "StudentTestScores.h"
 
+// class constructor
 StudentTestScores::StudentTestScores()
 {
     StudentTestScores("", 0);
@@ -13,9 +14,13 @@ StudentTestScores::StudentTestScores(string name, int numscores)
 
 }
 
+// class destructor
 StudentTestScores::~StudentTestScores()
 {
-    delete[] testScores;
+    if (testScores)
+    {
+        delete [] testScores;
+    }
 }
 
 StudentTestScores::StudentTestScores(const StudentTestScores &other)

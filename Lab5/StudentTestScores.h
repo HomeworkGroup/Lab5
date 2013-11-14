@@ -15,13 +15,14 @@ class StudentTestScores
 private:
     string studentName;
     int numTestScores;
-    double *testScores;
+    double * testScores;
 public:
-    //New default constructor
+    // class constructor
     StudentTestScores(); 
     StudentTestScores(string, int);
     StudentTestScores(const StudentTestScores &other);      // class copy constructor
-    ~StudentTestScores();  				// class destructor
+    // class destructor
+    ~StudentTestScores();
 
 
     void displayTestScores();
