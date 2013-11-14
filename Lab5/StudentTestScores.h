@@ -16,9 +16,9 @@ private:
     string studentName;
     int numTestScores;
     double *testScores;
-
 public:
-    StudentTestScores(); //New default constructor
+    //New default constructor
+    StudentTestScores(); 
     StudentTestScores(string, int);
     StudentTestScores(const StudentTestScores &other);      // class copy constructor
     ~StudentTestScores();  				// class destructor

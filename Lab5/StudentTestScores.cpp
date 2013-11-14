@@ -1,24 +1,15 @@
-#include <iostream>
-#include <string>
 #include "StudentTestScores.h"
-using namespace std;
 
 StudentTestScores::StudentTestScores()
 {
-    studentName = "";
-    numTestScores = 0;
-    testScores = NULL;
+    StudentTestScores("", 0);
 }
 
 StudentTestScores::StudentTestScores(string name, int numscores)
 {
     studentName = name;
     numTestScores = numscores;
-
-    if (!numscores)
-        testScores = NULL;
-    else
-        testScores = new double[numTestScores];
+    testScores = numscores ? new double[numscores] : 0;
 
 }
 
