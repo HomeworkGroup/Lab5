@@ -37,7 +37,7 @@ public:
     const StudentTestScores & operator = (const StudentTestScores &other);
 
     // *** Stream I/O operations here
-	friend ostream & operator << (ostream & out, const StudentTestScores &other);
+    friend ostream & operator << (ostream & out, const StudentTestScores &other);
     friend istream & operator >> (istream & in, StudentTestScores &other);
 };
 

@@ -35,6 +35,7 @@ int main()
         while (i < (int) line_buf.length() && line_buf[i] != '\t') student_name += line_buf[i++];
         i++;
 
+        //1.Test number
         buf.clear();
         while (i < (int) line_buf.length() && line_buf[i] != '\t') buf += line_buf[i++];
         i++;
@@ -50,6 +51,7 @@ int main()
         n = 0;
         while (test_number--)
         {
+            //2.Test score
             buf.clear();
             while (i < (int) line_buf.length() && line_buf[i] != '\t') buf += line_buf[i++];
             //For invalid test_number

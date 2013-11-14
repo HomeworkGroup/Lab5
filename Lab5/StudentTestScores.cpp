@@ -11,7 +11,6 @@ StudentTestScores::StudentTestScores(string name, int numscores)
     studentName = name;
     numTestScores = numscores;
     testScores = numscores ? new double[numscores] : 0;
-
 }
 
 // class destructor
@@ -45,6 +44,23 @@ void StudentTestScores::setOneTestScore(int i, double score)
     if ((testScores) && (i >= 0) && (i < numTestScores))
     {
         testScores[i] = score;
+    }
+}
+
+string StudentTestScores::getName()
+{
+    return studentName;
+}
+
+double StudentTestScores::getOneTestScore(int i)
+{
+    if ((testScores) && (i >= 0) && (i < numTestScores))
+    {
+        return testScores[i];
+    }
+    else
+    {
+        return -1;
     }
 }
 
@@ -100,25 +116,9 @@ string StudentTestScores::getLetterGrade() const
     }
 }
 
-string StudentTestScores::getName()
-{
-    return studentName;
-}
-
-double StudentTestScores::getOneTestScore(int i)
-{
-    if ((testScores) && (i >= 0) && (i < numTestScores))
-    {
-        return testScores[i];
-    }
-    else
-    {
-        return -1;
-    }
-}
-
 const StudentTestScores & StudentTestScores::operator = (const StudentTestScores &other)
 {
+    //a little optimization
     if (this == &other)
     {
         return other;
@@ -149,7 +149,7 @@ istream & operator >> (istream & in, StudentTestScores &other)
     }
 
     in >> other.studentName >> other.numTestScores;
-    other.testScores = new double[other.numTestScores];
+    other.testScores = other.numTestScores ? new double[other.numTestScores] : 0;
     for (int i = 0; i < other.numTestScores; i++)
     {
         in >> other.testScores[i];
